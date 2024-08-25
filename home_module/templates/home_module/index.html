@@ -156,35 +156,35 @@
                                 </h4>
                             </div>
                         </div>
-                    
+
                         {% for web_app in web_apps %}
                             <div class="col-12 col-md-6 col-xl-4 mb-4">
-                            <a href="{{ web_app.address }}">
-                                <div class="work-box position-relative">
-                                    <img src="{{ web_app.image.url }}"
-                                         alt="{{ web_app.title }}">
-                                    <div class="des-overlay">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <h5>
-                                                        {{ web_app.title }}
-                                                    </h5>
-                                                </div>
-                                                <div class="col-12">
-                                                    <h6>
-                                                        FrontEnd : {{ web_app.front_end }}
-                                                    </h6>
-                                                    <h6>
-                                                        BackEnd : {{ web_app.back_end }}
-                                                    </h6>
+                                <a href="{{ web_app.address }}">
+                                    <div class="work-box position-relative">
+                                        <img src="{{ web_app.image.url }}"
+                                             alt="{{ web_app.title }}">
+                                        <div class="des-overlay">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5>
+                                                            {{ web_app.title }}
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <h6>
+                                                            FrontEnd : {{ web_app.front_end }}
+                                                        </h6>
+                                                        <h6>
+                                                            BackEnd : {{ web_app.back_end }}
+                                                        </h6>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
                         {% endfor %}
                     </div>
                 </div>
@@ -208,31 +208,31 @@
                     <div class="row">
                         {% for app in apps %}
                             <div class="col-12 col-md-6 mb-5">
-                            <div class="video-wrapper">
-                                <div class="video-aparat">
-                                    <iframe src="{{ app.video_link }}"
-                                            allowFullScreen="true" webkitallowfullscreen="true"
-                                            mozallowfullscreen="true">
-                                    </iframe>
+                                <div class="video-wrapper">
+                                    <div class="video-aparat">
+                                        <iframe src="{{ app.video_link }}"
+                                                allowFullScreen="true" webkitallowfullscreen="true"
+                                                mozallowfullscreen="true">
+                                        </iframe>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="des-video">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <h6>
-                                                {{ app.title }}
-                                            </h6>
-                                        </div>
-                                        <div class="col-6 text-left">
-                                            <h6>
-                                                {{ app.program_language }}
-                                            </h6>
+                                <div class="des-video">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6>
+                                                    {{ app.title }}
+                                                </h6>
+                                            </div>
+                                            <div class="col-6 text-left">
+                                                <h6>
+                                                    {{ app.program_language }}
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         {% endfor %}
                     </div>
                 </div>
@@ -252,58 +252,27 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-6 col-xl-4 mb-4">
-                            <div class="certificate-box position-relative">
-                                <img src="/static/images/desktop-wallpaper-software-developer-software-engineering.jpg"
-                                     alt="">
-                                <div class="certificate-icon-box position-absolute bottom-0 end-0 pe-3 pb-3">
-                                    <a href="" class="image-popup">
-                                        <i class="bi bi-search text-white"></i>
-                                    </a>
-                                </div>
-                                <div class="des-certificate position-absolute top-0">
-                                    <h6>
-                                        مدرک پایتون مجتمع فنی
-                                    </h6>
+                        {% for certificate in certificates %}
+                            <div class="col-12 col-md-6 col-xl-4 mb-4">
+                                <div class="certificate-box position-relative">
+                                    <img src="{{ certificate.image.url }}"
+                                         alt="{{ certificate.title }}">
+                                    <div class="certificate-icon-box position-absolute bottom-0 end-0 pe-3 pb-3">
+                                        <a href="{{ certificate.image.url }}" class="image-popup">
+                                            <i class="bi bi-search text-white"></i>
+                                        </a>
+                                    </div>
+                                    <div class="des-certificate position-absolute top-0">
+                                        <h6>
+                                            {{ certificate.title }}
+                                        </h6>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-12 col-md-6 col-xl-4 mb-4">
-                            <div class="certificate-box position-relative">
-                                <img class="image-popup"
-                                     src="/static/images/desktop-wallpaper-software-developer-software-engineering.jpg"
-                                     alt="">
-                                <div class="certificate-icon-box position-absolute bottom-0 end-0 pe-3 pb-3">
-                                    <a href="" class="">
-                                        <i class="bi bi-search text-white"></i>
-                                    </a>
-                                </div>
-                                <div class="des-certificate position-absolute top-0">
-                                    <h6>
-                                        مدرک پایتون مجتمع فنی
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
 
-                        <div class="col-12 col-md-6 col-xl-4 mb-4">
-                            <div class="certificate-box position-relative">
-                                <img class="image-popup"
-                                     src="/static/images/desktop-wallpaper-software-developer-software-engineering.jpg"
-                                     alt="">
-                                <div class="certificate-icon-box position-absolute bottom-0 end-0 pe-3 pb-3">
-                                    <a href="" class="">
-                                        <i class="bi bi-search text-white"></i>
-                                    </a>
-                                </div>
-                                <div class="des-certificate position-absolute top-0">
-                                    <h6>
-                                        مدرک پایتون مجتمع فنی
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -415,4 +384,22 @@
 
         /* End Auto Write */
     </script>
+
+        <script>
+            /* Start Magnific Popup JQuery */
+
+            $(document).ready(function () {
+                $('.image-popup').magnificPopup({
+                    type: 'image',
+                    removalDelay: 300,
+                    mainClass: 'mfp-fade',
+                    gallery: {
+                        enabled: true
+                    }
+                });
+            });
+
+            /* End Magnific Popup JQuery */
+        </script>
+
 {% endblock %}

@@ -128,25 +128,6 @@ $(document).ready(function () {
 
 /* End Page Filling JQuery */
 
-/* Start Magnific Popup JQuery */
-
-$(document).ready(function () {
-    $('.image-popup').magnificPopup({
-        type: 'image',
-        removalDelay: 300,
-        mainClass: 'mfp-fade',
-        items: {
-            src: './images/desktop-wallpaper-software-developer-software-engineering.jpg'
-        },
-        gallery: {
-            enabled: true
-        }
-    });
-});
-
-/* End Magnific Popup JQuery */
-
-
 /* Start Navbar Toggler Button */
 
 const navbarElement = document.getElementById('navbar-desktop')

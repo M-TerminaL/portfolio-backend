@@ -742,6 +742,12 @@ p {
     opacity: 0;
 }
 
+.mfp-img {
+    max-width: 900px !important; /* حداکثر عرض تصویر */
+    max-height: 700px !important; /* حداکثر ارتفاع تصویر */
+}
+
+
 /* End certificates Styles */
 
 

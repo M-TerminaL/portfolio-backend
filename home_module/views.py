@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views import View
+
+from certificate_module.models import Certificate
 from .models import ProfileSetting
 from about_module.models import AboutMe, Skill
 from work_module.models import WebApplication, App
@@ -13,12 +15,14 @@ class MainView(View):
         skills: Skill = Skill.objects.filter(is_active=True).all()
         web_apps: WebApplication = WebApplication.objects.filter(is_active=True).all()
         apps: App = App.objects.filter(is_active=True).all()
+        certificates: Certificate = Certificate.objects.filter(is_active=True).all()
         context = {
             'profile': profile,
             'about_me': about_me,
             'skills': skills,
             'web_apps': web_apps,
-            'apps': apps
+            'apps': apps,
+            'certificates': certificates
         }
         return render(request, 'home_module/index.html', context)
 

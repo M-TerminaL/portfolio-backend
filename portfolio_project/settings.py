@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'home_module',
     'about_module',
     'work_module',
+    'certificate_module',
     'django_render_partial',
     'admin_interface',
     'colorfield',
