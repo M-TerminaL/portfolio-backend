@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .models import ProfileSetting
+from about_module.models import AboutMe, Skill
 
 # Create your views here.
 
@@ -8,8 +9,12 @@ from .models import ProfileSetting
 class MainView(View):
     def get(self, request):
         profile: ProfileSetting = ProfileSetting.objects.filter(is_main_profile=True).first()
+        about_me: AboutMe = AboutMe.objects.filter(is_active=True).first()
+        skills: Skill = Skill.objects.filter(is_active=True).all()
         context = {
-            'profile': profile
+            'profile': profile,
+            'about_me': about_me,
+            'skills': skills
         }
         return render(request, 'home_module/index.html', context)
 
