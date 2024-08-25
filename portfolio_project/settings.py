@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home_module',
     'about_module',
+    'work_module',
     'django_render_partial',
     'admin_interface',
     'colorfield',

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from .models import ProfileSetting
 from about_module.models import AboutMe, Skill
-
+from work_module.models import WebApplication, App
 # Create your views here.
 
 
@@ -11,10 +11,14 @@ class MainView(View):
         profile: ProfileSetting = ProfileSetting.objects.filter(is_main_profile=True).first()
         about_me: AboutMe = AboutMe.objects.filter(is_active=True).first()
         skills: Skill = Skill.objects.filter(is_active=True).all()
+        web_apps: WebApplication = WebApplication.objects.filter(is_active=True).all()
+        apps: App = App.objects.filter(is_active=True).all()
         context = {
             'profile': profile,
             'about_me': about_me,
-            'skills': skills
+            'skills': skills,
+            'web_apps': web_apps,
+            'apps': apps
         }
         return render(request, 'home_module/index.html', context)
 

@@ -114,13 +114,6 @@
                                             </div>
                                         {% endfor %}
 
-
-
-
-
-
-
-
                                         <div class="col-12 mt-5">
                                             <h3>
                                                 تحصیلات من
@@ -163,25 +156,27 @@
                                 </h4>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 mb-4">
-                            <a href="">
+                    
+                        {% for web_app in web_apps %}
+                            <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <a href="{{ web_app.address }}">
                                 <div class="work-box position-relative">
-                                    <img src="/static/images/desktop-wallpaper-software-developer-software-engineering.jpg"
-                                         alt="">
+                                    <img src="{{ web_app.image.url }}"
+                                         alt="{{ web_app.title }}">
                                     <div class="des-overlay">
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-12">
                                                     <h5>
-                                                        وب سایت مجموعه ورزشی آریا
+                                                        {{ web_app.title }}
                                                     </h5>
                                                 </div>
                                                 <div class="col-12">
                                                     <h6>
-                                                        FrontEnd : htmlCss Bootstrap Vanilla Js
+                                                        FrontEnd : {{ web_app.front_end }}
                                                     </h6>
                                                     <h6>
-                                                        BackEnd : Django
+                                                        BackEnd : {{ web_app.back_end }}
                                                     </h6>
                                                 </div>
                                             </div>
@@ -190,71 +185,15 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-md-6 col-xl-4 mb-4">
-                            <a href="">
-                                <div class="work-box position-relative">
-                                    <img src="/static/images/desktop-wallpaper-software-developer-software-engineering.jpg"
-                                         alt="">
-                                    <div class="des-overlay">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <h5>
-                                                        وب سایت مجموعه ورزشی آریا
-                                                    </h5>
-                                                </div>
-                                                <div class="col-12">
-                                                    <h6>
-                                                        FrontEnd : htmlCss Bootstrap Vanilla Js
-                                                    </h6>
-                                                    <h6>
-                                                        BackEnd : Django
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4 mb-4">
-                            <a href="">
-                                <div class="work-box position-relative">
-                                    <img src="/static/images/desktop-wallpaper-software-developer-software-engineering.jpg"
-                                         alt="">
-                                    <div class="des-overlay">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <h5>
-                                                        وب سایت مجموعه ورزشی آریا
-                                                    </h5>
-                                                </div>
-                                                <div class="col-12">
-                                                    <h6>
-                                                        FrontEnd : htmlCss Bootstrap Vanilla Js
-                                                    </h6>
-                                                    <h6>
-                                                        BackEnd : Django
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
+                        {% endfor %}
                     </div>
                 </div>
-
 
                 <div class="container">
                     <div class="row sep sep-fix">
                         <div class="separated"></div>
                     </div>
                 </div>
-
 
                 <div class="container">
                     <div class="row">
@@ -267,10 +206,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6 mb-5">
+                        {% for app in apps %}
+                            <div class="col-12 col-md-6 mb-5">
                             <div class="video-wrapper">
                                 <div class="video-aparat">
-                                    <iframe src="https://www.aparat.com/video/video/embed/videohash/cz903/vt/frame"
+                                    <iframe src="{{ app.video_link }}"
                                             allowFullScreen="true" webkitallowfullscreen="true"
                                             mozallowfullscreen="true">
                                     </iframe>
@@ -281,98 +221,19 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <h6>
-                                                نرم افزار فیش حقوقی
+                                                {{ app.title }}
                                             </h6>
                                         </div>
                                         <div class="col-6 text-left">
                                             <h6>
-                                                پایتون
+                                                {{ app.program_language }}
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="col-12 col-md-6 mb-5">
-                            <div class="video-wrapper">
-                                <div class="video-aparat">
-                                    <iframe src="https://www.aparat.com/video/video/embed/videohash/cz903/vt/frame"
-                                            allowFullScreen="true" webkitallowfullscreen="true"
-                                            mozallowfullscreen="true">
-                                    </iframe>
-                                </div>
-                            </div>
-                            <div class="des-video">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <h6>
-                                                نرم افزار فیش حقوقی
-                                            </h6>
-                                        </div>
-                                        <div class="col-6 text-left">
-                                            <h6>
-                                                پایتون
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 mb-5">
-                            <div class="video-wrapper">
-                                <div class="video-aparat">
-                                    <iframe src="https://www.aparat.com/video/video/embed/videohash/cz903/vt/frame"
-                                            allowFullScreen="true" webkitallowfullscreen="true"
-                                            mozallowfullscreen="true">
-                                    </iframe>
-                                </div>
-                            </div>
-                            <div class="des-video">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <h6>
-                                                نرم افزار فیش حقوقی
-                                            </h6>
-                                        </div>
-                                        <div class="col-6 text-left">
-                                            <h6>
-                                                پایتون
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 mb-5">
-                            <div class="video-wrapper">
-                                <div class="video-aparat">
-                                    <iframe src="https://www.aparat.com/video/video/embed/videohash/cz903/vt/frame"
-                                            allowFullScreen="true" webkitallowfullscreen="true"
-                                            mozallowfullscreen="true">
-                                    </iframe>
-                                </div>
-                            </div>
-                            <div class="des-video">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <h6>
-                                                نرم افزار فیش حقوقی
-                                            </h6>
-                                        </div>
-                                        <div class="col-6 text-left">
-                                            <h6>
-                                                پایتون
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
