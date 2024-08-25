@@ -5,11 +5,11 @@
                 <div id="geo-shape-one"></div>
                 <div id="geo-shape-two"></div>
                 <div id="img-profile">
-                    <img src="/static/images/desktop-wallpaper-software-developer-software-engineering.jpg" alt="">
+                    <img src="{{ profile.img_profile.url }}" alt="alireza babaei">
                 </div>
                 <div id="name-navbar" class="text-center mt-5">
                     <h2>
-                        علیرضا بابایی
+                        {{ profile.full_name }}
                     </h2>
                 </div>
             </div>
@@ -53,16 +53,16 @@
     </div>
     <div class="box">
         <div id="social-media-box" class="d-flex justify-content-evenly align-items-center">
-            <a href="" title="گیت هاب من">
+            <a href="{{ profile.github }}" title="گیت هاب من" target="_blank">
                 <i class="bi bi-github"></i>
             </a>
-            <a href="" title="اینستاگرام من">
+            <a href="https://www.instagram.com/{{ profile.instagram }}" title="اینستاگرام من" target="_blank">
                 <i class="bi bi-instagram"></i>
             </a>
-            <a href="" title="تلگرام من">
+            <a href="https://t.me/{{ profile.telegram }}" title="تلگرام من" target="_blank">
                 <i class="bi bi-telegram"></i>
             </a>
-            <a href="" title="واتس آپ من">
+            <a href="https://wa.me/{{ profile.whatsapp }}" title="واتس آپ من" target="_blank">
                 <i class="bi bi-whatsapp"></i>
             </a>
         </div>
