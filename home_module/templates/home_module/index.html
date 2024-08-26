@@ -251,7 +251,6 @@
                                 </h3>
                             </div>
                         </div>
-
                         {% for certificate in certificates %}
                             <div class="col-12 col-md-6 col-xl-4 mb-4">
                                 <div class="certificate-box position-relative">
@@ -269,10 +268,7 @@
                                     </div>
                                 </div>
                             </div>
-
                         {% endfor %}
-
-
                     </div>
                 </div>
             </div>
@@ -292,26 +288,26 @@
 
                             <div class="info mb-5">
                                 <h4>
-                                    با من در ارتباط باشید
+                                    {{ contact_info.title }}
                                 </h4>
 
                                 <p>
-                                    از طریق این فرم می توانید با من در ارتباط باشید.
+                                    {{ contact_info.short_des_one }}
                                     <br>
-                                    پاسخ شما از طریق ایمیل برایتان ارسال خواهد شد.
+                                    {{ contact_info.short_des_two }}
                                 </p>
 
                                 <div class="more-info">
                                     <i class="bi bi-map"></i>
-                                    <span>تهران</span>
+                                    <span>{{ contact_info.location }}</span>
                                 </div>
                                 <div class="more-info">
                                     <i class="bi bi-envelope-at"></i>
-                                    <span>andromedaa5692@gmail.com</span>
+                                    <span>{{ contact_info.email }}</span>
                                 </div>
                                 <div class="more-info">
                                     <i class="bi bi-telephone"></i>
-                                    <span>09123101457</span>
+                                    <span>{{ contact_info.phone }}</span>
                                 </div>
 
                             </div>
@@ -322,24 +318,26 @@
                                     پیام خود را برای من ارسال کنید
                                 </h4>
 
-                                <form action="" id="form" class="container-fluid">
+                                <form action="" method="post" id="form" class="container-fluid">
+                                    {% csrf_token %}
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <input type="text" placeholder="نام و نام خانوادگی"
-                                                   class="d-block p-1 ps-3 w-100 bg-transparent mb-3">
+
+                                            {{ contact_form.full_name }}
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="email" placeholder="ایمیل"
-                                                   class="d-block p-1 ps-3 w-100 bg-transparent mb-3">
+
+                                            {{ contact_form.email }}
                                         </div>
 
                                         <div class="col-12">
-                                            <input type="text" placeholder="عنوان"
-                                                   class="d-block p-1 ps-3 w-100 bg-transparent mb-3">
+
+                                            {{ contact_form.subject }}
                                         </div>
 
                                         <div class="col-12">
-                                            <textarea name="" id="" rows="10"></textarea>
+
+                                            {{ contact_form.text }}
                                         </div>
                                     </div>
 
@@ -348,6 +346,35 @@
                                     </button>
 
                                 </form>
+
+                                <div class="container-fluid mt-3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            {% if contact_form.errors %}
+
+                                                <div class="alert alert-danger alert-dismissible fade show"
+                                                     role="alert">
+                                                    <span>{{ contact_form.full_name.errors }}</span>
+                                                    <span>{{ contact_form.email.errors }}</span>
+                                                    <span>{{ contact_form.subject.errors }}</span>
+                                                    <span>{{ contact_form.text.errors }}</span>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                            aria-label="Close"></button>
+                                                </div>
+
+                                            {% endif %}
+
+                                            {% if contact_form.is_valid %}
+                                                <div class="alert alert-success alert-dismissible fade show"
+                                                     role="alert">
+                                                    <span>{{ success }}</span>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                            aria-label="Close"></button>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -385,21 +412,21 @@
         /* End Auto Write */
     </script>
 
-        <script>
-            /* Start Magnific Popup JQuery */
+    <script>
+        /* Start Magnific Popup JQuery */
 
-            $(document).ready(function () {
-                $('.image-popup').magnificPopup({
-                    type: 'image',
-                    removalDelay: 300,
-                    mainClass: 'mfp-fade',
-                    gallery: {
-                        enabled: true
-                    }
-                });
+        $(document).ready(function () {
+            $('.image-popup').magnificPopup({
+                type: 'image',
+                removalDelay: 300,
+                mainClass: 'mfp-fade',
+                gallery: {
+                    enabled: true
+                }
             });
+        });
 
-            /* End Magnific Popup JQuery */
-        </script>
+        /* End Magnific Popup JQuery */
+    </script>
 
 {% endblock %}
