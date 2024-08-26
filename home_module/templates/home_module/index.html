@@ -1,7 +1,8 @@
 {% extends 'shared/layout.html' %}
+{% load thumbnail %}
 
 {% block title %}
-    علیرضا بابایی
+    {{ profile.full_name }}
 {% endblock %}
 
 {% block content %}
@@ -27,8 +28,10 @@
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="main-profile-img-box">
-                                    <img src="{{ profile.img_profile.url }}"
-                                         alt="علیرضا بابایی">
+                                    {% thumbnail profile.img_profile "600x600" crop="center" quality=100 as im %}
+                                        <img src="{{ im.url }}"
+                                             alt="علیرضا بابایی">
+                                    {% endthumbnail %}
                                 </div>
                             </div>
                         </div>
@@ -39,8 +42,10 @@
                         <div class="row">
                             <div class="col-12 col-lg-6 mt-5">
                                 <div class="main-profile-img-box mt-5 pt-5">
-                                    <img src="{{ profile.img_profile.url }}"
-                                         alt="علیرضا بابایی">
+                                    {% thumbnail profile.img_profile "600x600" crop="center" quality=100 as im %}
+                                        <img src="{{ im.url }}"
+                                             alt="علیرضا بابایی">
+                                    {% endthumbnail %}
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
@@ -161,8 +166,12 @@
                             <div class="col-12 col-md-6 col-xl-4 mb-4">
                                 <a href="{{ web_app.address }}">
                                     <div class="work-box position-relative">
-                                        <img src="{{ web_app.image.url }}"
-                                             alt="{{ web_app.title }}">
+
+                                        {% thumbnail web_app.image "1200x1200" crop="center" quality=100 as im %}
+                                            <img src="{{ im.url }}"
+                                                 alt="{{ web_app.title }}">
+                                        {% endthumbnail %}
+
                                         <div class="des-overlay">
                                             <div class="container">
                                                 <div class="row">
@@ -254,8 +263,12 @@
                         {% for certificate in certificates %}
                             <div class="col-12 col-md-6 col-xl-4 mb-4">
                                 <div class="certificate-box position-relative">
-                                    <img src="{{ certificate.image.url }}"
-                                         alt="{{ certificate.title }}">
+                                
+                                    {% thumbnail certificate.image "456x256" crop="center" quality=100 as im %}
+                                        <img src="{{ im.url }}"
+                                             alt="{{ certificate.title }}">
+                                    {% endthumbnail %}
+
                                     <div class="certificate-icon-box position-absolute bottom-0 end-0 pe-3 pb-3">
                                         <a href="{{ certificate.image.url }}" class="image-popup">
                                             <i class="bi bi-search text-white"></i>

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'admin_interface',
     'colorfield',
     'django.contrib.admin',
-    'jalali_date'
+    'jalali_date',
+    'sorl.thumbnail'
 ]
 
 MIDDLEWARE = [

@@ -1,3 +1,5 @@
+{% load thumbnail %}
+
 <aside id="navbar-desktop">
     <div class="custom-scrollbar-container ps">
         <div class="content">
@@ -5,7 +7,12 @@
                 <div id="geo-shape-one"></div>
                 <div id="geo-shape-two"></div>
                 <div id="img-profile">
-                    <img src="{{ profile.img_profile.url }}" alt="alireza babaei">
+
+                    {% thumbnail profile.img_profile "200x200" crop="center" quality=100 as im %}
+                        <img src="{{ im.url }}"
+                             alt="alireza babaei">
+                    {% endthumbnail %}
+
                 </div>
                 <div id="name-navbar" class="text-center mt-5">
                     <h2>
