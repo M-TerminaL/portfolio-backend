@@ -10,7 +10,7 @@
 
                     {% thumbnail profile.img_profile "200x200" crop="center" quality=100 as im %}
                         <img src="{{ im.url }}"
-                             alt="alireza babaei">
+                             alt="{{ profile.keyword_one }}">
                     {% endthumbnail %}
 
                 </div>

@@ -1,6 +1,10 @@
 {% extends 'shared/layout.html' %}
 {% load thumbnail %}
 
+{% block meta_description %}
+    <meta name="description" content="{{ profile.meta_description }}">
+{% endblock %}
+
 {% block title %}
     {{ profile.full_name }}
 {% endblock %}
@@ -30,7 +34,7 @@
                                 <div class="main-profile-img-box">
                                     {% thumbnail profile.img_profile "600x600" crop="center" quality=100 as im %}
                                         <img src="{{ im.url }}"
-                                             alt="علیرضا بابایی">
+                                             alt="{{ profile.keyword_two }}">
                                     {% endthumbnail %}
                                 </div>
                             </div>
@@ -44,7 +48,7 @@
                                 <div class="main-profile-img-box mt-5 pt-5">
                                     {% thumbnail profile.img_profile "600x600" crop="center" quality=100 as im %}
                                         <img src="{{ im.url }}"
-                                             alt="علیرضا بابایی">
+                                             alt="{{ profile.keyword_three }}">
                                     {% endthumbnail %}
                                 </div>
                             </div>
@@ -388,7 +392,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
