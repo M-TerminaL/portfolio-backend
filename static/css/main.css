@@ -274,7 +274,7 @@ li {
 /* Start Home Page Styles */
 
 
-#nav-list li.active>a {
+#nav-list li.active > a {
     color: var(--clr-three);
     font-weight: 600;
 }
@@ -286,11 +286,12 @@ li {
     background-color: rgb(71, 69, 69)
 }
 
-#pp-nav ul li .active span{
+#pp-nav ul li .active span {
     background-color: var(--clr-three); /* رنگ قرمز برای بال فعال */
-    
+
 
 }
+
 #pp-nav a.active {
     /* background-color: var(--clr-three);
        border-radius: 50%;
@@ -611,7 +612,7 @@ p {
    opacity: 1;
 } */
 
-.work-box:hover>img {
+.work-box:hover > img {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -695,7 +696,7 @@ p {
     -o-transition: var(--transition);
 }
 
-.certificate-box:hover>.des-certificate {
+.certificate-box:hover > .des-certificate {
     opacity: 1;
 }
 
@@ -743,8 +744,8 @@ p {
 }
 
 .mfp-img {
-    max-width: 900px !important; /* حداکثر عرض تصویر */
-    max-height: 700px !important; /* حداکثر ارتفاع تصویر */
+    max-width: 100% !important;
+    max-height: 700px !important;
 }
 
 
@@ -861,9 +862,9 @@ textarea {
     height: 7rem;
     border-radius: 50%;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     border: 20px solid var(--clr-white);
     border-top-color: var(--clr-three);
     animation: loading 2s infinite linear;
@@ -871,19 +872,18 @@ textarea {
 }
 
 @keyframes loading {
-    from{
-        transform: translate(-50%,-50%) rotate(0deg);
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
     }
-    to{
-        transform: translate(-50%,-50%) rotate(360deg);
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
 /* End PreLoader Styles */
 
 
-
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
     .short-intro h1 {
         font-size: 4rem;
     }
@@ -898,11 +898,13 @@ textarea {
         font-size: 12px;
     }
 
-
+    .mfp-img {
+        width: 700px !important;
+        height: 500px !important;
+    }
 }
 
-
-@media screen and (min-width:992px) {
+@media screen and (min-width: 992px) {
     .main-profile-img-box {
         margin-top: 0;
     }
@@ -938,9 +940,14 @@ textarea {
     #contactus {
         padding-top: 0;
     }
+
+    .mfp-img {
+        width: 900px !important;
+        height: 550px !important;
+    }
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width: 1200px) {
     #navbar-desktop {
         right: 0;
     }
@@ -1004,5 +1011,10 @@ textarea {
     #contactus .main-left {
         padding-left: 10rem;
         padding-right: 3rem;
+    }
+
+    .mfp-img {
+        max-width: 700px !important;
+        max-height: 550px !important;
     }
 }
