@@ -787,7 +787,7 @@ p {
 }
 
 .info .more-info span {
-    font-size: var(--font-lg);
+    font-size: var(--font-md);
 }
 
 #form {
@@ -901,6 +901,10 @@ textarea {
     .mfp-img {
         width: 700px !important;
         height: 500px !important;
+    }
+
+    .info .more-info span {
+        font-size: var(--font-lg);
     }
 }
 
