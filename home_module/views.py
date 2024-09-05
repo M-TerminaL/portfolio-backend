@@ -16,7 +16,7 @@ class MainView(View):
     def get(self, request):
         profile: ProfileSetting = ProfileSetting.objects.filter(is_main_profile=True).first()
         about_me: AboutMe = AboutMe.objects.filter(is_active=True).first()
-        skills: Skill = Skill.objects.filter(is_active=True).all()
+        skills: Skill = Skill.objects.filter(is_active=True).all().order_by('priority')
         web_apps: WebApplication = WebApplication.objects.filter(is_active=True).all()
         apps: App = App.objects.filter(is_active=True).all()
         certificates: Certificate = Certificate.objects.filter(is_active=True).all()
@@ -47,7 +47,7 @@ class MainView(View):
             context = {
                 'profile': ProfileSetting.objects.filter(is_main_profile=True).first(),
                 'about_me': AboutMe.objects.filter(is_active=True).first(),
-                'skills': Skill.objects.filter(is_active=True).all(),
+                'skills': Skill.objects.filter(is_active=True).all().order_by('priority'),
                 'web_apps': WebApplication.objects.filter(is_active=True).all(),
                 'apps': App.objects.filter(is_active=True).all(),
                 'certificates': Certificate.objects.filter(is_active=True).all(),
@@ -60,7 +60,7 @@ class MainView(View):
         return render(request, 'home_module/index.html', context={
             'profile': ProfileSetting.objects.filter(is_main_profile=True).first(),
             'about_me': AboutMe.objects.filter(is_active=True).first(),
-            'skills': Skill.objects.filter(is_active=True).all(),
+            'skills': Skill.objects.filter(is_active=True).all().order_by('priority'),
             'web_apps': WebApplication.objects.filter(is_active=True).all(),
             'apps': App.objects.filter(is_active=True).all(),
             'certificates': Certificate.objects.filter(is_active=True).all(),
