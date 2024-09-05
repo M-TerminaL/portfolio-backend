@@ -21,6 +21,7 @@ class AboutMe(models.Model):
 class Skill(models.Model):
     title = models.CharField(max_length=200, verbose_name='عنوان مهارت')
     skill_percentage = models.PositiveIntegerField(verbose_name='درصد مهارت')
+    priority = models.IntegerField(verbose_name='اولویت بر اساس عدد')
     is_active = models.BooleanField(default=True, verbose_name='فعال / غیرفعال')
 
     def __str__(self):

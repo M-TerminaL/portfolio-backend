@@ -8,7 +8,7 @@ class AboutMeAdmin(admin.ModelAdmin):
 
 
 class SkillAdmin(admin.ModelAdmin):
-    list_display = ['title', 'skill_percentage', 'is_active']
+    list_display = ['title', 'skill_percentage', 'priority', 'is_active']
     list_editable = ['skill_percentage', 'is_active']
     list_filter = ['is_active', 'skill_percentage']
     list_per_page = 15
